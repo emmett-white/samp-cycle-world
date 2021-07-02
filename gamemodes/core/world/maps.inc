@@ -1,0 +1,117 @@
+#include <YSI_Coding\y_hooks>
+
+hook OnGameModeInit()
+{
+    new tmpobjid;
+    tmpobjid = CreateDynamicObject(18766, 1384.792480, -1892.754516, 13.964661, 0.000000, 0.000000, 0.000000, -1, -1, -1, 300.00, 300.00); 
+    SetDynamicObjectMaterial(tmpobjid, 0, 18835, "mickytextures", "smileyface1", 0x00000000);
+    tmpobjid = CreateDynamicObject(18766, 1394.722045, -1892.754516, 13.964661, 0.000000, 0.000000, 0.000000, -1, -1, -1, 300.00, 300.00); 
+    SetDynamicObjectMaterial(tmpobjid, 0, 18835, "mickytextures", "smileyface1", 0x00000000);
+    tmpobjid = CreateDynamicObject(18766, 1384.790649, -1902.152832, 13.964661, 0.000000, 0.000007, -0.600005, -1, -1, -1, 300.00, 300.00); 
+    SetDynamicObjectMaterial(tmpobjid, 0, 18835, "mickytextures", "smileyface1", 0x00000000);
+    tmpobjid = CreateDynamicObject(18766, 1394.719726, -1902.256835, 13.964661, 0.000000, 0.000007, -0.600005, -1, -1, -1, 300.00, 300.00); 
+    SetDynamicObjectMaterial(tmpobjid, 0, 18835, "mickytextures", "smileyface1", 0x00000000);
+    tmpobjid = CreateDynamicObject(18766, 1364.898437, -1901.912597, 13.964661, 0.000000, 0.000014, -0.600005, -1, -1, -1, 300.00, 300.00); 
+    SetDynamicObjectMaterial(tmpobjid, 0, 18835, "mickytextures", "smileyface1", 0x00000000);
+    tmpobjid = CreateDynamicObject(18766, 1374.827514, -1902.016601, 13.964661, 0.000000, 0.000014, -0.600005, -1, -1, -1, 300.00, 300.00); 
+    SetDynamicObjectMaterial(tmpobjid, 0, 18835, "mickytextures", "smileyface1", 0x00000000);
+    tmpobjid = CreateDynamicObject(18766, 1370.452026, -1892.754516, 13.964661, 0.000000, 0.000000, 0.000000, -1, -1, -1, 300.00, 300.00); 
+    SetDynamicObjectMaterial(tmpobjid, 0, 18835, "mickytextures", "smileyface1", 0x00000000);
+    tmpobjid = CreateDynamicObject(18766, 1384.792480, -1894.755615, 16.874622, -89.999992, -248.375320, 111.624580, -1, -1, -1, 300.00, 300.00); 
+    SetDynamicObjectMaterial(tmpobjid, 0, 18835, "mickytextures", "smileyface1", 0x00000000);
+    tmpobjid = CreateDynamicObject(18766, 1394.722045, -1894.755615, 16.874622, -89.999992, -248.375320, 111.624580, -1, -1, -1, 300.00, 300.00); 
+    SetDynamicObjectMaterial(tmpobjid, 0, 18835, "mickytextures", "smileyface1", 0x00000000);
+    tmpobjid = CreateDynamicObject(18766, 1370.452026, -1894.755615, 16.874622, -89.999992, -248.375320, 111.624580, -1, -1, -1, 300.00, 300.00); 
+    SetDynamicObjectMaterial(tmpobjid, 0, 18835, "mickytextures", "smileyface1", 0x00000000);
+    tmpobjid = CreateDynamicObject(18766, 1384.792480, -1899.357543, 16.874622, -89.999992, -258.815643, 101.184249, -1, -1, -1, 300.00, 300.00); 
+    SetDynamicObjectMaterial(tmpobjid, 0, 18835, "mickytextures", "smileyface1", 0x00000000);
+    tmpobjid = CreateDynamicObject(18766, 1394.722045, -1899.357543, 16.874622, -89.999992, -258.815643, 101.184249, -1, -1, -1, 300.00, 300.00); 
+    SetDynamicObjectMaterial(tmpobjid, 0, 18835, "mickytextures", "smileyface1", 0x00000000);
+    tmpobjid = CreateDynamicObject(18766, 1370.452026, -1899.357543, 16.874622, -89.999992, -258.815643, 101.184249, -1, -1, -1, 300.00, 300.00); 
+    SetDynamicObjectMaterial(tmpobjid, 0, 18835, "mickytextures", "smileyface1", 0x00000000);
+    tmpobjid = CreateDynamicObject(18766, 1377.502197, -1896.905761, 16.894618, 270.000000, -158.375320, 111.624580, -1, -1, -1, 300.00, 300.00); 
+    SetDynamicObjectMaterial(tmpobjid, 0, 18996, "mattextures", "sampblack", 0x00000000);
+    tmpobjid = CreateDynamicObject(18766, 1398.381835, -1897.674926, 13.964661, 180.000000, 180.000000, 90.000000, -1, -1, -1, 300.00, 300.00); 
+    SetDynamicObjectMaterial(tmpobjid, 0, 18835, "mickytextures", "smileyface1", 0x00000000);
+    tmpobjid = CreateDynamicObject(18766, 1365.373291, -1897.674926, 13.964661, 180.000000, 180.000000, 90.000000, -1, -1, -1, 300.00, 300.00); 
+    SetDynamicObjectMaterial(tmpobjid, 0, 18835, "mickytextures", "smileyface1", 0x00000000);
+    tmpobjid = CreateDynamicObject(18766, 1377.482177, -1896.965820, 16.794616, 270.000000, -158.375320, 111.624580, -1, -1, -1, 300.00, 300.00); 
+    SetDynamicObjectMaterial(tmpobjid, 0, 18835, "mickytextures", "smileyface1", 0x00000000);
+    tmpobjid = CreateDynamicObject(7909, 1366.138061, -1892.606567, 13.193015, 0.000000, 0.000000, 180.000000, -1, -1, -1, 300.00, 300.00); 
+    SetDynamicObjectMaterialText(tmpobjid, 0, "{000000}CYCLE WORLD", 80, "Ariel", 20, 1, 0x00000000, 0x00000000, 0);
+    tmpobjid = CreateDynamicObject(7909, 1362.957641, -1892.606567, 11.533013, 0.000000, 0.000000, 180.000000, -1, -1, -1, 300.00, 300.00); 
+    SetDynamicObjectMaterialText(tmpobjid, 0, "{FFFFFF}b", 50, "Webdings", 20, 1, 0x00000000, 0x00000000, 0);
+    tmpobjid = CreateDynamicObject(19377, 1370.148559, -1897.938232, 12.444951, 0.099999, 89.800003, 179.399963, -1, -1, -1, 300.00, 300.00); 
+    SetDynamicObjectMaterial(tmpobjid, 0, 19092, "pompoms", "wood-64x64", 0x00000000);
+    tmpobjid = CreateDynamicObject(19377, 1380.598876, -1898.017456, 12.438111, 0.299997, 90.000007, 179.499954, -1, -1, -1, 300.00, 300.00); 
+    SetDynamicObjectMaterial(tmpobjid, 0, 19092, "pompoms", "wood-64x64", 0x00000000);
+    tmpobjid = CreateDynamicObject(19377, 1391.035400, -1898.037597, 12.437744, 0.299997, 90.000007, -179.700027, -1, -1, -1, 300.00, 300.00); 
+    SetDynamicObjectMaterial(tmpobjid, 0, 19092, "pompoms", "wood-64x64", 0x00000000);
+    tmpobjid = CreateDynamicObject(19377, 1401.515136, -1897.982666, 12.437744, 0.299997, 90.000007, -179.700027, -1, -1, -1, 300.00, 300.00); 
+    SetDynamicObjectMaterial(tmpobjid, 0, 19092, "pompoms", "wood-64x64", 0x00000000);
+    tmpobjid = CreateDynamicObject(18766, 1377.502197, -1896.945800, 16.954620, 270.000000, -158.375320, 111.624580, -1, -1, -1, 300.00, 300.00); 
+    SetDynamicObjectMaterial(tmpobjid, 0, 18835, "mickytextures", "smileyface1", 0x00000000);
+    tmpobjid = CreateDynamicObject(19087, 1375.444335, -1901.408325, 14.905382, 0.000000, 0.000015, 0.000000, -1, -1, -1, 300.00, 300.00); 
+    SetDynamicObjectMaterial(tmpobjid, 0, 18901, "matclothes", "hatmancblk", 0x00000000);
+    tmpobjid = CreateDynamicObject(19087, 1375.444335, -1901.408325, 16.385400, 0.000000, 0.000015, 0.000000, -1, -1, -1, 300.00, 300.00); 
+    SetDynamicObjectMaterial(tmpobjid, 0, 18901, "matclothes", "hatmancblk", 0x00000000);
+    tmpobjid = CreateDynamicObject(19087, 1375.444335, -1893.267700, 14.905382, 0.000000, 0.000022, 0.000000, -1, -1, -1, 300.00, 300.00); 
+    SetDynamicObjectMaterial(tmpobjid, 0, 18901, "matclothes", "hatmancblk", 0x00000000);
+    tmpobjid = CreateDynamicObject(19087, 1375.444335, -1893.267700, 16.385400, 0.000000, 0.000022, 0.000000, -1, -1, -1, 300.00, 300.00); 
+    SetDynamicObjectMaterial(tmpobjid, 0, 18901, "matclothes", "hatmancblk", 0x00000000);
+    tmpobjid = CreateDynamicObject(19087, 1397.862426, -1893.267700, 14.975381, 0.000000, 0.000015, 0.000000, -1, -1, -1, 300.00, 300.00); 
+    SetDynamicObjectMaterial(tmpobjid, 0, 18901, "matclothes", "hatmancblk", 0x00000000);
+    tmpobjid = CreateDynamicObject(19087, 1397.862426, -1893.267700, 16.455400, 0.000000, 0.000015, 0.000000, -1, -1, -1, 300.00, 300.00); 
+    SetDynamicObjectMaterial(tmpobjid, 0, 18901, "matclothes", "hatmancblk", 0x00000000);
+    tmpobjid = CreateDynamicObject(19087, 1397.862426, -1901.778686, 14.975381, 0.000000, 0.000022, 0.000000, -1, -1, -1, 300.00, 300.00); 
+    SetDynamicObjectMaterial(tmpobjid, 0, 18901, "matclothes", "hatmancblk", 0x00000000);
+    tmpobjid = CreateDynamicObject(19087, 1397.862426, -1901.778686, 16.455400, 0.000000, 0.000022, 0.000000, -1, -1, -1, 300.00, 300.00); 
+    SetDynamicObjectMaterial(tmpobjid, 0, 18901, "matclothes", "hatmancblk", 0x00000000);
+    tmpobjid = CreateDynamicObject(19087, 1397.862426, -1894.737426, 16.355403, 89.999992, 196.533325, -16.533344, -1, -1, -1, 300.00, 300.00); 
+    SetDynamicObjectMaterial(tmpobjid, 0, 18901, "matclothes", "hatmancblk", 0x00000000);
+    tmpobjid = CreateDynamicObject(19087, 1397.862426, -1893.257446, 16.355403, 89.999992, 196.533325, -16.533344, -1, -1, -1, 300.00, 300.00); 
+    SetDynamicObjectMaterial(tmpobjid, 0, 18901, "matclothes", "hatmancblk", 0x00000000);
+    tmpobjid = CreateDynamicObject(19087, 1397.862426, -1898.656616, 16.355403, 89.999992, 240.324035, -60.324043, -1, -1, -1, 300.00, 300.00); 
+    SetDynamicObjectMaterial(tmpobjid, 0, 18901, "matclothes", "hatmancblk", 0x00000000);
+    tmpobjid = CreateDynamicObject(19087, 1397.862426, -1897.176635, 16.355403, 89.999992, 240.324035, -60.324043, -1, -1, -1, 300.00, 300.00); 
+    SetDynamicObjectMaterial(tmpobjid, 0, 18901, "matclothes", "hatmancblk", 0x00000000);
+    tmpobjid = CreateDynamicObject(19087, 1397.862426, -1899.357177, 16.355403, 89.999992, 254.227920, -74.227920, -1, -1, -1, 300.00, 300.00); 
+    SetDynamicObjectMaterial(tmpobjid, 0, 18901, "matclothes", "hatmancblk", 0x00000000);
+    tmpobjid = CreateDynamicObject(19087, 1397.862426, -1897.877197, 16.355403, 89.999992, 254.227920, -74.227920, -1, -1, -1, 300.00, 300.00); 
+    SetDynamicObjectMaterial(tmpobjid, 0, 18901, "matclothes", "hatmancblk", 0x00000000);
+    tmpobjid = CreateDynamicObject(19087, 1375.456298, -1897.176635, 16.285404, 89.999992, 265.964019, -85.963996, -1, -1, -1, 300.00, 300.00); 
+    SetDynamicObjectMaterial(tmpobjid, 0, 18901, "matclothes", "hatmancblk", 0x00000000);
+    tmpobjid = CreateDynamicObject(19087, 1375.456298, -1899.357177, 16.285404, 89.999992, 267.979522, -87.979476, -1, -1, -1, 300.00, 300.00); 
+    SetDynamicObjectMaterial(tmpobjid, 0, 18901, "matclothes", "hatmancblk", 0x00000000);
+    tmpobjid = CreateDynamicObject(19087, 1375.456298, -1897.877197, 16.285404, 89.999992, 267.979522, -87.979476, -1, -1, -1, 300.00, 300.00); 
+    SetDynamicObjectMaterial(tmpobjid, 0, 18901, "matclothes", "hatmancblk", 0x00000000);
+    tmpobjid = CreateDynamicObject(19087, 1375.456298, -1893.275024, 16.285404, 89.999992, 267.979522, -87.979476, -1, -1, -1, 300.00, 300.00); 
+    SetDynamicObjectMaterial(tmpobjid, 0, 18901, "matclothes", "hatmancblk", 0x00000000);
+    tmpobjid = CreateDynamicObject(19087, 1375.456298, -1895.335449, 16.285404, 89.999992, 268.989471, -88.989402, -1, -1, -1, 300.00, 300.00); 
+    SetDynamicObjectMaterial(tmpobjid, 0, 18901, "matclothes", "hatmancblk", 0x00000000);
+    tmpobjid = CreateDynamicObject(19087, 1375.456298, -1893.855468, 16.285404, 89.999992, 268.989471, -88.989402, -1, -1, -1, 300.00, 300.00); 
+    SetDynamicObjectMaterial(tmpobjid, 0, 18901, "matclothes", "hatmancblk", 0x00000000);
+    tmpobjid = CreateDynamicObject(18762, 1392.494018, -1895.721435, 12.919015, 0.000000, 90.000000, 90.000000, -1, -1, -1, 300.00, 300.00); 
+    SetDynamicObjectMaterial(tmpobjid, 0, 19092, "pompoms", "wood-64x64", 0x00000000);
+    tmpobjid = CreateDynamicObject(18762, 1392.494018, -1900.691406, 12.919015, 0.000000, 90.000000, 90.000000, -1, -1, -1, 300.00, 300.00); 
+    SetDynamicObjectMaterial(tmpobjid, 0, 18996, "mattextures", "wood020", 0x00000000);
+    tmpobjid = CreateDynamicObject(1663, 1394.917968, -1897.726684, 12.941460, 0.000000, 0.000000, -111.899986, -1, -1, -1, 300.00, 300.00); 
+    SetDynamicObjectMaterial(tmpobjid, 0, 18901, "matclothes", "hatmancblk", 0x00000000);
+    tmpobjid = CreateDynamicObject(7914, 1398.286132, -1903.074829, 13.129017, 1620.000000, 1620.000000, 90.099739, -1, -1, -1, 300.00, 300.00); 
+    SetDynamicObjectMaterialText(tmpobjid, 0, "{000000}WELCOME", 70, "Ariel", 20, 1, 0x00000000, 0x00000000, 0);
+    tmpobjid = CreateDynamicObject(18766, 1374.945556, -1897.674926, 13.964661, 180.000000, 180.000000, 90.000000, -1, -1, -1, 300.00, 300.00); 
+    SetDynamicObjectMaterial(tmpobjid, 0, 18835, "mickytextures", "smileyface1", 0x00000000);
+
+    tmpobjid = CreateDynamicObject(1215, 1375.286743, -1891.961914, 16.944740, -21.399991, -0.299999, -0.099998, -1, -1, -1, 300.00, 300.00); 
+    tmpobjid = CreateDynamicObject(1215, 1379.666625, -1891.961547, 16.966093, -21.399991, -0.299999, -0.099998, -1, -1, -1, 300.00, 300.00); 
+    tmpobjid = CreateDynamicObject(2008, 1394.006225, -1897.988159, 12.525726, 0.000000, 0.000000, 90.000000, -1, -1, -1, 300.00, 300.00); 
+    tmpobjid = CreateDynamicObject(19824, 1393.713867, -1898.109863, 13.328969, 0.000000, 0.000000, 0.000000, -1, -1, -1, 300.00, 300.00); 
+    tmpobjid = CreateDynamicObject(19325, 1378.586059, -1892.263183, 14.434107, 0.000000, 0.000000, 91.300010, -1, -1, -1, 300.00, 300.00); 
+
+    CreateDynamicPickup(1318, 1, Float: 1391.3153, Float: -1897.4458, Float: 13.5206);
+    CreateDynamic3DTextLabel("/buy", X11_BLACK,
+        Float: 1391.3153, Float: -1897.4458, Float: 13.5206, Float: 10.0
+    );
+
+    return Y_HOOKS_CONTINUE_RETURN_1;
+}
