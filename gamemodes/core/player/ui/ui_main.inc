@@ -7,4 +7,5 @@
 #endif
 #define _ui_main_included
 
-#include <ui_functions>
+#include <ui_cycle>
+#include <ui_speedo>

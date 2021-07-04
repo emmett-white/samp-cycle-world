@@ -108,6 +108,9 @@ hook OnGameModeInit()
     tmpobjid = CreateDynamicObject(19824, 1393.713867, -1898.109863, 13.328969, 0.000000, 0.000000, 0.000000, -1, -1, -1, 300.00, 300.00); 
     tmpobjid = CreateDynamicObject(19325, 1378.586059, -1892.263183, 14.434107, 0.000000, 0.000000, 91.300010, -1, -1, -1, 300.00, 300.00); 
 
+    CreateDynamicPickup(19197, 1, Float: 1377.6525, Float: -1890.6141, Float: 13.4739);
+    CreateDynamicPickup(19197, 1, Float: 1377.5708, Float: -1894.0348, Float: 13.5033);
+
     CreateDynamicPickup(1318, 1, Float: 1391.3153, Float: -1897.4458, Float: 13.5206);
     CreateDynamic3DTextLabel("/buy", X11_BLACK,
         Float: 1391.3153, Float: -1897.4458, Float: 13.5206, Float: 10.0

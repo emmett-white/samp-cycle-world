@@ -16,14 +16,14 @@
 #endif
 
 static
-    PlayerText: ui_BuyTextDraws[MAX_PLAYERS][10] = {INVALID_PLAYER_TEXT_DRAW,...},
+    PlayerText: ui_BuyTextDraws[MAX_PLAYERS][10],
     gPlayerMenuPage[MAX_PLAYERS],
     gPlayerMenuPrice[MAX_PLAYERS];
 
 stock UI_CreateBuyTextDraws(const playerid, const bool: status = true)
 {
     if (!status) {
-        for (new i = 0; i < sizeof ui_BuyTextDraws; ++i) {
+        for (new i = 0; i < 10; ++i) {
             PlayerTextDrawDestroy(playerid, PlayerText: ui_BuyTextDraws[playerid][i]);
         }
 
@@ -130,7 +130,7 @@ stock UI_CreateBuyTextDraws(const playerid, const bool: status = true)
     PlayerTextDrawSetProportional(playerid, ui_BuyTextDraws[playerid][9], 1);
     PlayerTextDrawSetSelectable(playerid, ui_BuyTextDraws[playerid][9], true);
     
-    for (new i = 0; i < sizeof ui_BuyTextDraws; ++i) {
+    for (new i = 0; i < 10; ++i) {
         PlayerTextDrawShow(playerid, PlayerText: ui_BuyTextDraws[playerid][i]);
     }
 
@@ -143,7 +143,6 @@ stock Cycle_SetMenuPage(const playerid, const pageid)
         case 0: {
             PlayerTextDrawSetPreviewModel(playerid, PlayerText: ui_BuyTextDraws[playerid][4], 481);
             PlayerTextDrawShow(playerid, PlayerText: ui_BuyTextDraws[playerid][4]);
-
             PlayerTextDrawSetString(playerid, PlayerText: ui_BuyTextDraws[playerid][5], "BMX");
             PlayerTextDrawSetString(playerid, PlayerText: ui_BuyTextDraws[playerid][6],
                 "TIP: BICIKL~n~STANJE: NOVO~n~CENA: $110"
@@ -240,7 +239,7 @@ stock Cycle_SetMenuPage(const playerid, const pageid)
             PlayerTextDrawSetPreviewModel(playerid, PlayerText: ui_BuyTextDraws[playerid][4], 521);
             PlayerTextDrawShow(playerid, PlayerText: ui_BuyTextDraws[playerid][4]);
 
-            PlayerTextDrawSetString(playerid, PlayerText: ui_BuyTextDraws[playerid][5], "YAMAHA YZF");
+            PlayerTextDrawSetString(playerid, PlayerText: ui_BuyTextDraws[playerid][5], "YAMAHA YZF-R125");
             PlayerTextDrawSetString(playerid, PlayerText: ui_BuyTextDraws[playerid][6],
                 "TIP: SPORT / SUPER SPORT~n~ZAPREMINA: 125ccm~n~STANJE: NOVO~n~KW/KS: 11/15~n~CENA: $3500"
             );

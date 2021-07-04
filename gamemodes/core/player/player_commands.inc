@@ -68,10 +68,9 @@ cmd::buy(playerid, const string: params[])
     return 1;
 }
 
-static BitArray: SPAWNED_CYCLE<MAX_PLAYERS>;
 cmd::spawncycle(playerid, const string: params[])
 {
-    if (Bit_Get(Bit: SPAWNED_CYCLE, playerid) || Player_SpawnedCycle(playerid)) {
+    if (Cycle_GetSpawnStatus(playerid)) {
         SendClientMessage(playerid, -1, "Vec ste spawnovali svoj bicikl/motor.");
         return 1;
     }
@@ -103,7 +102,7 @@ cmd::spawncycle(playerid, const string: params[])
     Player_SpawnedCycle(playerid) = Cycle_Spawn(tmpvehid, Float: x, Float: y, Float: z, Float: a);
     PutPlayerInVehicle(playerid, Player_SpawnedCycle(playerid), 0);
 
-    Bit_Let(Bit: SPAWNED_CYCLE, playerid);
+    Cycle_SetSpawnStatus(playerid);
 
     return 1;
 }
@@ -193,7 +192,7 @@ cmd::sellcycle(playerid, const string: params[])
 
     Cycle_Destroy(tmpvehid);
     DestroyVehicle(Player_SpawnedCycle(playerid));
-    Bit_Set(Bit: SPAWNED_CYCLE, playerid, false);
+    Cycle_SetSpawnStatus(playerid, false);
 
     return 1;
 }

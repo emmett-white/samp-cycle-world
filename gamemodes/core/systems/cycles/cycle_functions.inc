@@ -27,7 +27,8 @@ static
     Float: cycle_Z[MAX_CYCLES],
     Float: cycle_A[MAX_CYCLES],
     
-    Iterator: Iter_Cycles<MAX_CYCLES>;
+    Iterator: Iter_Cycles<MAX_CYCLES>,
+    BitArray: SPAWNED_CYCLE<MAX_PLAYERS>;
 
 /**
   * Functions
@@ -92,6 +93,13 @@ stock Cycle_SetColour(const cycle_id, const color1 = 1, const color_2 = 1)
     return 1;
 }
 
+stock Cycle_SetSpawnStatus(const playerid, bool: status = true)
+{
+    Bit_Set(Bit: SPAWNED_CYCLE, playerid, bool: status);
+    return 1;
+}
+
+stock Cycle_GetSpawnStatus(const playerid) return Bit_Get(Bit: SPAWNED_CYCLE, playerid);
 stock Cycle_GetOwner(const cycle_id) return string: cycle_Owner[cycle_id];
 stock Cycle_GetColour(const cycle_id, const index) return (!index ? (cycle_Color[cycle_id][0]) : cycle_Color[cycle_id][1]);
 stock Cycle_GetPosition(const cycle_id, const index)

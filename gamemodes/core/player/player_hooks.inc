@@ -23,3 +23,11 @@ hook OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 
     return Y_HOOKS_CONTINUE_RETURN_1;
 }
+
+hook OnPlayerDisconnect(playerid, reason)
+{
+    DestroyVehicle(Player_SpawnedCycle(playerid));
+    Cycle_SetSpawnStatus(playerid, false);
+
+    return Y_HOOKS_CONTINUE_RETURN_1;
+}
