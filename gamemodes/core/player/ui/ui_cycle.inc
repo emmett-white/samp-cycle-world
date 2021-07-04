@@ -157,7 +157,7 @@ stock Cycle_SetMenuPage(const playerid, const pageid)
 
             PlayerTextDrawSetString(playerid, PlayerText: ui_BuyTextDraws[playerid][5], "OLD BIKE");
             PlayerTextDrawSetString(playerid, PlayerText: ui_BuyTextDraws[playerid][6],
-                "VRSTA: BICIKL~n~STANJE: NOVO~n~CENA: $70"
+                "TIP: BICIKL~n~STANJE: NOVO~n~CENA: $70"
             );
 
             gPlayerMenuPrice[playerid] = 70;
