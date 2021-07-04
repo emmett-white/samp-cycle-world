@@ -8,3 +8,4 @@
 #define _player_main_included
 
 #include <player_commands>
+#include <player_hooks>

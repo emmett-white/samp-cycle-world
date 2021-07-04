@@ -18,7 +18,6 @@ new cycle_UniqueID[MAX_CYCLES];
 
 static
     cycle_ID[MAX_CYCLES],
-    
     cycle_Color[MAX_CYCLES][2],
     
     string: cycle_Owner[MAX_CYCLES][MAX_PLAYER_NAME],
@@ -55,6 +54,28 @@ stock Cycle_Create(const cycle_vehid, const string: cycle_owner[], Float: x, Flo
     );
 
     mysql_tquery_s(MySQL: MySQL_GetHandle(), str_query_insert, "InsertCycleID", "d", id);
+
+    return 1;
+}
+
+stock Cycle_Destroy(const cycle_vehid)
+{
+    new String: str_query_delete = String: str_format(
+        "DELETE FROM cycles WHERE cycle_vehid = '%d'", cycle_vehid
+    );
+
+    mysql_tquery_s(MySQL: MySQL_GetHandle(), str_query_delete);
+    Iter_Remove(Iter_Cycles, cycle_vehid);
+
+    return 1;
+}
+
+stock Cycle_Spawn(const cycle_vehid, Float: x, Float: y, Float: z, Float: a, const color1 = 1, const color2 = 1)
+{
+    CreateVehicle(cycle_vehid,
+        Float: x, Float: y, Float: z, Float: a,
+        color1, color2, 0
+    );
 
     return 1;
 }

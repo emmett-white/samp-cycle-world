@@ -76,7 +76,7 @@ stock UI_CreateBuyTextDraws(const playerid, const bool: status = true)
     PlayerTextDrawBackgroundColor(playerid, ui_BuyTextDraws[playerid][4], 0x00000000);
     PlayerTextDrawFont(playerid, ui_BuyTextDraws[playerid][4], 5);
     PlayerTextDrawSetProportional(playerid, ui_BuyTextDraws[playerid][4], 0);
-    PlayerTextDrawSetPreviewModel(playerid, ui_BuyTextDraws[playerid][4], 522);
+    PlayerTextDrawSetPreviewModel(playerid, ui_BuyTextDraws[playerid][4], 18631);
     PlayerTextDrawSetPreviewRot(playerid, ui_BuyTextDraws[playerid][4], -10.000000, 0.000000, -45.000000, 1.000000);
     PlayerTextDrawSetPreviewVehCol(playerid, ui_BuyTextDraws[playerid][4], 1, 1);
 
@@ -278,7 +278,6 @@ stock Cycle_SetMenuPage(const playerid, const pageid)
 
 stock Cycle_BuyMenuPage(const playerid, const pageid)
 {
-    static cycle[MAX_PLAYERS];
     switch (pageid) {
         case 0: {
             if (Player_GetMoney(playerid) < gPlayerMenuPrice[playerid]) {
@@ -289,13 +288,13 @@ stock Cycle_BuyMenuPage(const playerid, const pageid)
             Player_SetMoney(playerid, (Player_GetMoney(playerid) - gPlayerMenuPrice[playerid]));
             GivePlayerMoney(playerid, -gPlayerMenuPrice[playerid]);
             
-            cycle[playerid] = Cycle_Create(481, ReturnPlayerName(playerid),
+            Player_SpawnedCycle(playerid) = Cycle_Create(481, ReturnPlayerName(playerid),
                 Float: 1370.4475, Float: -1886.7913, Float: 13.5138, Float: 356.9191
             );
             
             SendClientMessage(playerid, X11_RED, "* Buy: "WHITE"Cestitamo! Kupili ste novi bicikl!");
             
-            PutPlayerInVehicle(playerid, cycle[playerid], 0);
+            PutPlayerInVehicle(playerid, Player_SpawnedCycle(playerid), 0);
             CancelSelectTextDraw(playerid);
             UI_CreateBuyTextDraws(playerid, false);
         }
@@ -309,13 +308,13 @@ stock Cycle_BuyMenuPage(const playerid, const pageid)
             Player_SetMoney(playerid, (Player_GetMoney(playerid) - gPlayerMenuPrice[playerid]));
             GivePlayerMoney(playerid, -gPlayerMenuPrice[playerid]);
             
-            cycle[playerid] = Cycle_Create(509, ReturnPlayerName(playerid),
+            Player_SpawnedCycle(playerid) = Cycle_Create(509, ReturnPlayerName(playerid),
                 Float: 1370.4475, Float: -1886.7913, Float: 13.5138, Float: 356.9191
             );
 
             SendClientMessage(playerid, X11_RED, "* Buy: "WHITE"Cestitamo! Kupili ste novi bicikl!");
 
-            PutPlayerInVehicle(playerid, cycle[playerid], 0);
+            PutPlayerInVehicle(playerid, Player_SpawnedCycle(playerid), 0);
             CancelSelectTextDraw(playerid);
             UI_CreateBuyTextDraws(playerid, false);
         }
@@ -329,13 +328,13 @@ stock Cycle_BuyMenuPage(const playerid, const pageid)
             Player_SetMoney(playerid, (Player_GetMoney(playerid) - gPlayerMenuPrice[playerid]));
             GivePlayerMoney(playerid, -gPlayerMenuPrice[playerid]);
             
-            cycle[playerid] = Cycle_Create(510, ReturnPlayerName(playerid),
+            Player_SpawnedCycle(playerid) = Cycle_Create(510, ReturnPlayerName(playerid),
                 Float: 1370.4475, Float: -1886.7913, Float: 13.5138, Float: 356.9191
             );
 
             SendClientMessage(playerid, X11_RED, "* Buy: "WHITE"Cestitamo! Kupili ste novi bicikl!");
             
-            PutPlayerInVehicle(playerid, cycle[playerid], 0);
+            PutPlayerInVehicle(playerid, Player_SpawnedCycle(playerid), 0);
             CancelSelectTextDraw(playerid);
             UI_CreateBuyTextDraws(playerid, false);
         }
@@ -349,13 +348,13 @@ stock Cycle_BuyMenuPage(const playerid, const pageid)
             Player_SetMoney(playerid, (Player_GetMoney(playerid) - gPlayerMenuPrice[playerid]));
             GivePlayerMoney(playerid, -gPlayerMenuPrice[playerid]);
             
-            cycle[playerid] = Cycle_Create(462, ReturnPlayerName(playerid),
+            Player_SpawnedCycle(playerid) = Cycle_Create(462, ReturnPlayerName(playerid),
                 Float: 1370.4475, Float: -1886.7913, Float: 13.5138, Float: 356.9191
             );
 
             SendClientMessage(playerid, X11_RED, "* Buy: "WHITE"Cestitamo! Kupili ste novi motor!");
             
-            PutPlayerInVehicle(playerid, cycle[playerid], 0);
+            PutPlayerInVehicle(playerid, Player_SpawnedCycle(playerid), 0);
             CancelSelectTextDraw(playerid);
             UI_CreateBuyTextDraws(playerid, false);
         }
@@ -369,13 +368,33 @@ stock Cycle_BuyMenuPage(const playerid, const pageid)
             Player_SetMoney(playerid, (Player_GetMoney(playerid) - gPlayerMenuPrice[playerid]));
             GivePlayerMoney(playerid, -gPlayerMenuPrice[playerid]);
             
-            cycle[playerid] = Cycle_Create(586, ReturnPlayerName(playerid),
+            Player_SpawnedCycle(playerid) = Cycle_Create(586, ReturnPlayerName(playerid),
                 Float: 1370.4475, Float: -1886.7913, Float: 13.5138, Float: 356.9191
             );
 
             SendClientMessage(playerid, X11_RED, "* Buy: "WHITE"Cestitamo! Kupili ste novi motor!");
             
-            PutPlayerInVehicle(playerid, cycle[playerid], 0);
+            PutPlayerInVehicle(playerid, Player_SpawnedCycle(playerid), 0);
+            CancelSelectTextDraw(playerid);
+            UI_CreateBuyTextDraws(playerid, false);
+        }
+        
+        case 5: {
+            if (Player_GetMoney(playerid) < gPlayerMenuPrice[playerid]) {
+                SendClientMessage(playerid, -1, "Nemate dovoljno novca.");
+                return 1;
+            }
+
+            Player_SetMoney(playerid, (Player_GetMoney(playerid) - gPlayerMenuPrice[playerid]));
+            GivePlayerMoney(playerid, -gPlayerMenuPrice[playerid]);
+            
+            Player_SpawnedCycle(playerid) = Cycle_Create(463, ReturnPlayerName(playerid),
+                Float: 1370.4475, Float: -1886.7913, Float: 13.5138, Float: 356.9191
+            );
+
+            SendClientMessage(playerid, X11_RED, "* Buy: "WHITE"Cestitamo! Kupili ste novi motor!");
+            
+            PutPlayerInVehicle(playerid, Player_SpawnedCycle(playerid), 0);
             CancelSelectTextDraw(playerid);
             UI_CreateBuyTextDraws(playerid, false);
         }
@@ -389,13 +408,13 @@ stock Cycle_BuyMenuPage(const playerid, const pageid)
             Player_SetMoney(playerid, (Player_GetMoney(playerid) - gPlayerMenuPrice[playerid]));
             GivePlayerMoney(playerid, -gPlayerMenuPrice[playerid]);
             
-            cycle[playerid] = Cycle_Create(463, ReturnPlayerName(playerid),
+            Player_SpawnedCycle(playerid) = Cycle_Create(468, ReturnPlayerName(playerid),
                 Float: 1370.4475, Float: -1886.7913, Float: 13.5138, Float: 356.9191
             );
 
             SendClientMessage(playerid, X11_RED, "* Buy: "WHITE"Cestitamo! Kupili ste novi motor!");
             
-            PutPlayerInVehicle(playerid, cycle[playerid], 0);
+            PutPlayerInVehicle(playerid, Player_SpawnedCycle(playerid), 0);
             CancelSelectTextDraw(playerid);
             UI_CreateBuyTextDraws(playerid, false);
         }
@@ -409,13 +428,13 @@ stock Cycle_BuyMenuPage(const playerid, const pageid)
             Player_SetMoney(playerid, (Player_GetMoney(playerid) - gPlayerMenuPrice[playerid]));
             GivePlayerMoney(playerid, -gPlayerMenuPrice[playerid]);
             
-            cycle[playerid] = Cycle_Create(461, ReturnPlayerName(playerid),
+            Player_SpawnedCycle(playerid) = Cycle_Create(461, ReturnPlayerName(playerid),
                 Float: 1370.4475, Float: -1886.7913, Float: 13.5138, Float: 356.9191
             );
 
             SendClientMessage(playerid, X11_RED, "* Buy: "WHITE"Cestitamo! Kupili ste novi motor!");
             
-            PutPlayerInVehicle(playerid, cycle[playerid], 0);
+            PutPlayerInVehicle(playerid, Player_SpawnedCycle(playerid), 0);
             CancelSelectTextDraw(playerid);
             UI_CreateBuyTextDraws(playerid, false);
         }
@@ -429,13 +448,13 @@ stock Cycle_BuyMenuPage(const playerid, const pageid)
             Player_SetMoney(playerid, (Player_GetMoney(playerid) - gPlayerMenuPrice[playerid]));
             GivePlayerMoney(playerid, -gPlayerMenuPrice[playerid]);
             
-            cycle[playerid] = Cycle_Create(521, ReturnPlayerName(playerid),
+            Player_SpawnedCycle(playerid) = Cycle_Create(521, ReturnPlayerName(playerid),
                 Float: 1370.4475, Float: -1886.7913, Float: 13.5138, Float: 356.9191
             );
 
             SendClientMessage(playerid, X11_RED, "* Buy: "WHITE"Cestitamo! Kupili ste novi motor!");
             
-            PutPlayerInVehicle(playerid, cycle[playerid], 0);
+            PutPlayerInVehicle(playerid, Player_SpawnedCycle(playerid), 0);
             CancelSelectTextDraw(playerid);
             UI_CreateBuyTextDraws(playerid, false);
         }
@@ -449,13 +468,13 @@ stock Cycle_BuyMenuPage(const playerid, const pageid)
             Player_SetMoney(playerid, (Player_GetMoney(playerid) - gPlayerMenuPrice[playerid]));
             GivePlayerMoney(playerid, -gPlayerMenuPrice[playerid]);
 
-            cycle[playerid] = Cycle_Create(581, ReturnPlayerName(playerid),
+            Player_SpawnedCycle(playerid) = Cycle_Create(581, ReturnPlayerName(playerid),
                 Float: 1370.4475, Float: -1886.7913, Float: 13.5138, Float: 356.9191
             );
 
             SendClientMessage(playerid, X11_RED, "* Buy: "WHITE"Cestitamo! Kupili ste novi motor!");
             
-            PutPlayerInVehicle(playerid, cycle[playerid], 0);
+            PutPlayerInVehicle(playerid, Player_SpawnedCycle(playerid), 0);
             CancelSelectTextDraw(playerid);
             UI_CreateBuyTextDraws(playerid, false);
         }
@@ -469,13 +488,13 @@ stock Cycle_BuyMenuPage(const playerid, const pageid)
             Player_SetMoney(playerid, (Player_GetMoney(playerid) - gPlayerMenuPrice[playerid]));
             GivePlayerMoney(playerid, -gPlayerMenuPrice[playerid]);
 
-            cycle[playerid] = Cycle_Create(522, ReturnPlayerName(playerid),
+            Player_SpawnedCycle(playerid) = Cycle_Create(522, ReturnPlayerName(playerid),
                 Float: 1370.4475, Float: -1886.7913, Float: 13.5138, Float: 356.9191
             );
 
             SendClientMessage(playerid, X11_RED, "* Buy: "WHITE"Cestitamo! Kupili ste novi motor!");
             
-            PutPlayerInVehicle(playerid, cycle[playerid], 0);
+            PutPlayerInVehicle(playerid, Player_SpawnedCycle(playerid), 0);
             CancelSelectTextDraw(playerid);
             UI_CreateBuyTextDraws(playerid, false);
         }

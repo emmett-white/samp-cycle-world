@@ -98,6 +98,14 @@ stock Player_SetSpawn(const playerid, const type = 1)
                 0, 0, 0, 0, 0, 0
             );
         }
+
+        case 3: {
+            SetSpawnInfo(
+                playerid, 0, Player_GetSkin(playerid),
+                Float: 1370.4475, Float: -1886.7913, Float: 13.5138, Float: 356.9191,
+                0, 0, 0, 0, 0, 0
+            );
+        }
     }
 
     SpawnPlayer(playerid);
@@ -184,7 +192,21 @@ Dialog:DIALOG_LOGIN(const playerid, response, listitem, string: inputtext[])
 
         GameTextForPlayer(playerid, "~y~LOADING ACCOUNT...", 3000, 3);
         task_await(Task: BindToPlayer(task_ms(3000), playerid));
-        Player_SetSpawn(playerid, 2);
+
+        task_await(
+            Task: MySQL_QueryS(
+                String: str_format(
+                    "SELECT * FROM cycles WHERE cycle_owner = '%e'", ReturnPlayerName(playerid)
+                )
+            )
+        );
+
+        if (!cache_num_rows()) {
+            Player_SetSpawn(playerid, 2);
+            return 1;
+        }
+
+        Player_SetSpawn(playerid, 3);
     }
 
     else {

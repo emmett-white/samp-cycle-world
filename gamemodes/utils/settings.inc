@@ -14,3 +14,7 @@ const
     MAX_ADMIN_LEVEL =       3;
     
 #define MAX_REASON_LENGTH   64
+#define PRESSED(%0) (((newkeys & (%0)) == (%0)) && ((oldkeys & (%0)) != (%0)))
+
+new spawnedCycle[MAX_PLAYERS];
+#define Player_SpawnedCycle(%0) spawnedCycle[%0]
