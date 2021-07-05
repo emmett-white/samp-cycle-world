@@ -134,6 +134,8 @@ stock UI_CreateBuyTextDraws(const playerid, const bool: status = true)
         PlayerTextDrawShow(playerid, PlayerText: ui_BuyTextDraws[playerid][i]);
     }
 
+    SelectTextDraw(playerid, X11_WHITE);
+    
     return 1;
 }
 

@@ -185,6 +185,15 @@ stock Speedo_SetPlayerGear(const playerid, const gear = 0)
     return 1;
 }
 
+stock Speedo_IsMotorcycle(const vehicleid)
+{
+    switch (vehicleid) {
+        case 461, 462, 463, 468, 521, 522, 586, 581: return 1;
+    }
+
+    return 0;
+}
+
 stock Speedo_SetPlayerFuel(const playerid, const fuel = 0)
 {
     gPlayerCycleFuel[playerid] = fuel;
@@ -351,9 +360,9 @@ ptask Timer_UpdateCycleSpeed[200](playerid)
 }
 
 // Update fuel
-ptask Timer_UpdateCycleFuel[3000](playerid)
+ptask Timer_UpdateCycleFuel[(1000 * 60 * 5)](playerid)
 {
-    if (IsPlayerInAnyVehicle(playerid) && Speedo_GetPlayerFuel(playerid)) {
+    if (IsPlayerInAnyVehicle(playerid) && Speedo_GetPlayerFuel(playerid) && Speedo_IsMotorcycle(GetPlayerVehicleID(playerid))) {
         Speedo_SetPlayerFuel(playerid, (Speedo_GetPlayerFuel(playerid) - 1));
         va_PlayerTextDrawSetString(playerid, PlayerText: ui_Speedometer[playerid][3], "GORIVO:%dL", Speedo_GetPlayerFuel(playerid));
 

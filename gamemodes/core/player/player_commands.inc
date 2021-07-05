@@ -62,7 +62,7 @@ cmd::buy(playerid, const string: params[])
         return 1;
     }
 
-    SelectTextDraw(playerid, X11_WHITE);
+    // SelectTextDraw(playerid, X11_WHITE);
     UI_CreateBuyTextDraws(playerid);
 
     return 1;
