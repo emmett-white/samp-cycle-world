@@ -203,7 +203,7 @@ stock Cycle_SetMenuPage(const playerid, const pageid)
             PlayerTextDrawSetPreviewModel(playerid, PlayerText: ui_BuyTextDraws[playerid][4], 463);
             PlayerTextDrawShow(playerid, PlayerText: ui_BuyTextDraws[playerid][4]);
 
-            PlayerTextDrawSetString(playerid, PlayerText: ui_BuyTextDraws[playerid][5], "KAWASAKI VN CLASIC");
+            PlayerTextDrawSetString(playerid, PlayerText: ui_BuyTextDraws[playerid][5], "HARLEY DAVIDSON");
             PlayerTextDrawSetString(playerid, PlayerText: ui_BuyTextDraws[playerid][6],
                 "TIP: CHOPPER / CRUISER~n~ZAPREMINA: 1500ccm~n~STANJE: NOVO~n~KW/KS: 35/48~n~CENA: $4000"
             );

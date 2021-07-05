@@ -11,7 +11,8 @@
 
 static
     PlayerText: ui_Speedometer[MAX_PLAYERS][8],
-    gPlayerCycleGear[MAX_PLAYERS];
+    gPlayerCycleGear[MAX_PLAYERS],
+    gPlayerCycleFuel[MAX_PLAYERS] = 11; // 11L is max
 
 stock UI_CreateSpeedoTextDraws(const playerid, bool: status = true)
 {
@@ -57,7 +58,7 @@ stock UI_CreateSpeedoTextDraws(const playerid, bool: status = true)
     PlayerTextDrawSetPreviewRot(playerid, ui_Speedometer[playerid][2], -20.000000, 0.000000, -45.000000, 1.000000);
     PlayerTextDrawSetPreviewVehCol(playerid, ui_Speedometer[playerid][2], 1, 1);
 
-    ui_Speedometer[playerid][3] = CreatePlayerTextDraw(playerid, 631.083496, 376.915191, "GORIVO:11l");
+    ui_Speedometer[playerid][3] = va_CreatePlayerTextDraw(playerid, 631.083496, 376.915191, "GORIVO:%dl", Speedo_GetPlayerFuel(playerid));
     PlayerTextDrawLetterSize(playerid, ui_Speedometer[playerid][3], 0.243045, 1.314167);
     PlayerTextDrawTextSize(playerid, ui_Speedometer[playerid][3], 3577.000000, 0.000000);
     PlayerTextDrawAlignment(playerid, ui_Speedometer[playerid][3], 3);
@@ -184,8 +185,16 @@ stock Speedo_SetPlayerGear(const playerid, const gear = 0)
     return 1;
 }
 
+stock Speedo_SetPlayerFuel(const playerid, const fuel = 0)
+{
+    gPlayerCycleFuel[playerid] = fuel;
+
+    return 1;
+}
+
+stock Speedo_GetPlayerFuel(const playerid) return gPlayerCycleFuel[playerid];
 stock Speedo_GetPlayerGear(const playerid) return gPlayerCycleGear[playerid];
-stock Speedo_GetCycleSpeed(vehicleid)
+stock Speedo_GetCycleSpeed(const vehicleid)
 {
     static
         pos_y,
@@ -273,7 +282,7 @@ hook OnPlayerStateChange(playerid, newstate, oldstate)
             }
             
             case 463: {
-                PlayerTextDrawSetString(playerid, PlayerText: ui_Speedometer[playerid][0], "KAWASAKI VN CLASIC");
+                PlayerTextDrawSetString(playerid, PlayerText: ui_Speedometer[playerid][0], "HARLEY DAVIDSON");
                 PlayerTextDrawSetString(playerid, PlayerText: ui_Speedometer[playerid][6], "~w~123456");
                 PlayerTextDrawSetPreviewModel(playerid, PlayerText: ui_Speedometer[playerid][2], 463);
                 PlayerTextDrawShow(playerid, PlayerText: ui_Speedometer[playerid][2]);
@@ -324,7 +333,7 @@ hook OnPlayerStateChange(playerid, newstate, oldstate)
 }
 
 // Update gears
-ptask Speedo_UpdateSpeedo[1](playerid)
+ptask Timer_UpdateCycleSpeed[200](playerid)
 {
     va_PlayerTextDrawSetString(playerid, PlayerText: ui_Speedometer[playerid][1], "%dkm/h", Speedo_GetCycleSpeed(GetPlayerVehicleID(playerid)));
 
@@ -336,6 +345,34 @@ ptask Speedo_UpdateSpeedo[1](playerid)
         case 110..150: return Speedo_SetPlayerGear(playerid, 4);
         case 160..175: return Speedo_SetPlayerGear(playerid, 5);
         case 185..220: return Speedo_SetPlayerGear(playerid, 6);
+    }
+
+    return 1;
+}
+
+// Update fuel
+ptask Timer_UpdateCycleFuel[3000](playerid)
+{
+    if (IsPlayerInAnyVehicle(playerid) && Speedo_GetPlayerFuel(playerid)) {
+        Speedo_SetPlayerFuel(playerid, (Speedo_GetPlayerFuel(playerid) - 1));
+        va_PlayerTextDrawSetString(playerid, PlayerText: ui_Speedometer[playerid][3], "GORIVO:%dL", Speedo_GetPlayerFuel(playerid));
+
+        if (!Speedo_GetPlayerFuel(playerid)) {
+            static
+                engine,
+                lights,
+                alarm,
+                doors,
+                bonnet,
+                boot,
+                objective;
+            
+            GetVehicleParamsEx(GetPlayerVehicleID(playerid), engine, lights, alarm, doors, bonnet, boot, objective);
+            SetVehicleParamsEx(GetPlayerVehicleID(playerid), 0, lights, alarm, doors, bonnet, boot, objective);
+
+            SendClientMessage(playerid, X11_RED, "* Fuel: "WHITE"Nemate vise goriva u rezervoaru!");
+            return 1;
+        }
     }
 
     return 1;
